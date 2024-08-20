@@ -1,36 +1,149 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Advanced Next.js 14 Project
+
+This project is a comprehensive Next.js 14 application that demonstrates various advanced features and best practices for building modern web applications.
+
+## Features
+
+- Next.js 14 with App Router
+- TypeScript for type safety
+- Tailwind CSS for styling
+- NextUI component library
+- ESLint with Airbnb configuration
+- Prettier for code formatting
+- PostgreSQL database
+- Prisma ORM for database management
+- Next-Auth for authentication (Google provider)
+- React Testing Library and Jest for testing
+- Storybook for component development
+- Token expiration and refresh mechanism
+- CRUD API endpoints
+- Parallel and intercepting routes
+- Responsive layout with sidebar, header, and rightbar
+
+## Project Structure
+
 
 ## Getting Started
 
-First, run the development server:
+1. Clone the repository:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+```
+  git clone [https://github.com/yourusername/my-nextjs-project.git](https://github.com/yourusername/my-nextjs-project.git)
+  cd my-nextjs-project
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+2. Install dependencies:
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+```
+  npm install
+```
 
-## Learn More
+3. Set up your environment variables:
+Create a `.env` file in the root directory and add the following variables:
 
-To learn more about Next.js, take a look at the following resources:
+```
+  DATABASE_URL="postgresql://username:password@localhost:5432/your_database"
+  GOOGLE_CLIENT_ID="your_google_client_id"
+  GOOGLE_CLIENT_SECRET="your_google_client_secret"
+  NEXTAUTH_SECRET="your_nextauth_secret"
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+4. Set up the database:
 
-## Deploy on Vercel
+```
+  npx prisma generate
+  npx prisma db push
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+5. Run the development server:
+
+```
+  npm run dev
+```
+
+
+6. Open [http://localhost:3000](http://localhost:3000) in your browser to see the result.
+
+## Available Scripts
+
+- `npm run dev`: Runs the app in development mode
+- `npm run build`: Builds the app for production
+- `npm start`: Runs the built app in production mode
+- `npm test`: Runs the test suite
+- `npm run lint`: Runs the linter
+- `npm run storybook`: Starts the Storybook server
+
+## Testing
+
+This project uses Jest and React Testing Library for testing. Run the tests with:
+
+```
+  npm test
+```
+
+
+## Storybook
+
+To view the components in Storybook, run:
+```
+  npm run storybook
+```
+
+
+
+Then open [http://localhost:6006](http://localhost:6006) in your browser.
+
+## API Routes
+
+The project includes CRUD endpoints for the Product model:
+
+- GET /api/products
+- POST /api/products
+- GET /api/products/[id]
+- PUT /api/products/[id]
+- DELETE /api/products/[id]
+
+## Authentication
+
+This project uses Next-Auth for authentication with Google as the provider. The authentication flow includes email verification and token refresh. The token expiration is set to 30 days, with a refresh every 30 minutes.
+
+## Database Models
+
+The project includes two main models: User and Product. These are defined in the `prisma/schema.prisma` file. The User model includes fields for authentication and profile information, while the Product model represents items that can be created and managed by users.
+
+## UI Components
+
+The project uses NextUI, a React UI library built on top of Tailwind CSS. The main layout includes:
+
+- A responsive sidebar with navigation links
+- A header with branding and user actions
+- A main content area
+- A right sidebar for additional information or actions
+
+## Parallel and Intercepting Routes
+
+The project demonstrates the use of Next.js 14's parallel and intercepting routes:
+
+- Parallel route: An analytics dashboard that renders alongside the main content
+- Intercepting route: A modal for displaying product details without navigating away from the current page
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## License
+
+This project is licensed under the MIT License.
+
+## Acknowledgements
+
+This project was built using various open-source libraries and tools. We'd like to thank the developers and maintainers of Next.js, React, Tailwind CSS, NextUI, Prisma, and all other dependencies that made this project possible.
+
+## Support
+
+If you encounter any issues or have questions, please file an issue on the GitHub repository.
+
+Happy coding!
