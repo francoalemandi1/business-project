@@ -22,16 +22,14 @@ This project is a comprehensive Next.js 14 application that demonstrates various
 
 ## Project Structure
 
-
 ## Getting Started
 
 1. Clone the repository:
 
 ```
   git clone [https://github.com/yourusername/my-nextjs-project.git](https://github.com/yourusername/my-nextjs-project.git)
-  cd my-nextjs-project
+  cd b-project
 ```
-
 
 2. Install dependencies:
 
@@ -40,7 +38,7 @@ This project is a comprehensive Next.js 14 application that demonstrates various
 ```
 
 3. Set up your environment variables:
-Create a `.env` file in the root directory and add the following variables:
+   Create a `.env` file in the root directory and add the following variables:
 
 ```
   DATABASE_URL="postgresql://username:password@localhost:5432/your_database"
@@ -49,7 +47,6 @@ Create a `.env` file in the root directory and add the following variables:
   NEXTAUTH_SECRET="your_nextauth_secret"
 ```
 
-
 4. Set up the database:
 
 ```
@@ -57,13 +54,11 @@ Create a `.env` file in the root directory and add the following variables:
   npx prisma db push
 ```
 
-
 5. Run the development server:
 
 ```
   npm run dev
 ```
-
 
 6. Open [http://localhost:3000](http://localhost:3000) in your browser to see the result.
 
@@ -74,6 +69,7 @@ Create a `.env` file in the root directory and add the following variables:
 - `npm start`: Runs the built app in production mode
 - `npm test`: Runs the test suite
 - `npm run lint`: Runs the linter
+- `npm run format`: Runs Prettier to format the code
 - `npm run storybook`: Starts the Storybook server
 
 ## Testing
@@ -84,15 +80,13 @@ This project uses Jest and React Testing Library for testing. Run the tests with
   npm test
 ```
 
-
 ## Storybook
 
 To view the components in Storybook, run:
+
 ```
   npm run storybook
 ```
-
-
 
 Then open [http://localhost:6006](http://localhost:6006) in your browser.
 

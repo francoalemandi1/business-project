@@ -3,7 +3,6 @@ import { ErrorBoundary } from 'react-error-boundary';
 import { Metadata } from 'next';
 import { Providers } from './providers';
 import '../styles/globals.css';
-import { LayoutGroup } from 'framer-motion';
 
 export const metadata: Metadata = {
   title: 'My Next.js Project',
@@ -12,10 +11,8 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-  analytics
 }: {
   children: React.ReactNode;
-  analytics: React.ReactNode;
 }) {
   return (
     <html lang="en">
@@ -23,12 +20,7 @@ export default function RootLayout({
         <Providers>
           <ErrorBoundary fallback={<div>Something went wrong</div>}>
             <Suspense fallback={<div>Loading...</div>}>
-            <LayoutGroup>
-             
               <div>{children}</div>
-              <div>{analytics}</div>
-            </LayoutGroup>
-              {children}
             </Suspense>
           </ErrorBoundary>
         </Providers>
